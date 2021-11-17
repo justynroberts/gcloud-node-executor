@@ -1,0 +1,127 @@
+name: Google Cloud Node Executor
+version: 1
+rundeckPluginVersion: 1.2
+author: Jake Cohen / Justyn Roberts
+date: 2021-10-12
+url: http://rundeck.org/
+providers:
+  - name: GoogleCloudNodeExecutor
+    service: NodeExecutor
+    plugin-type: script
+    script-interpreter: /bin/bash
+    script-file: gcloud_node_executor.sh
+    script-args: ${node.hostname} ${exec.command} ${config.gcp_service_account_token} ${config.service_account} ${gcp_iaptunnelling} ${gcp_additionalcli} ${gcp_zone} ${gcp_project} ${gcp_tmpdir} ${gcp_gcloud}
+    config:
+      - name: gcp_service_account_token
+        type: String
+        title: GCloud Service Account Token
+        description: "JSON Token for GCloud Service Account"
+        default: true
+        renderingOptions:
+          selectionAccessor: STORAGE_PATH
+          valueConversion: STORAGE_PATH_AUTOMATIC_READ
+      - name: gcp_iaptunnelling
+        type: Boolean
+        title: "IAP Tunnelling"
+        default: true
+        description: "Initialise Identity Aware Proxy (IAP) before execution"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_additionalcli
+        type: String
+        title: "Additional Command line options"
+        description: "Add additional CLI options. Please use with care."
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_zone
+        type: String
+        title: "GCP Zone Deployment"
+        default: "us-central1-a"
+        description: "Select GCP Zone"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_project
+        type: String
+        title: "GCP Project ID"
+        default: "[ENTER PROJECT]"
+        description: "GCP Project"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_tmpdir
+        type: String
+        title: "Local Temp Directory"
+        default: "/tmp/rundeck/"
+        description: "Temp Directory for key creation etc"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_gcloud
+        type: String
+        title: "gcloud location"
+        default: "/bin/gcloud"
+        description: "Path of gcloud command. Please ensure a trailing /"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+  - name: GoogleCloudFileCopier
+    service: FileCopier
+    plugin-type: script
+    script-interpreter: /bin/bash
+    script-file: gcloud_file_copier.sh
+    script-args: ${node.hostname} ${file-copy.file} ${file-copy.destination} ${config.json_token_file} ${config.service_account}
+    config:
+      - name: json_token_file
+        type: String
+        title: GCloud JSON Token
+        description: "JSON Token for GCloud Service Account"
+      - name: gcp_iaptunnelling
+        type: Boolean
+        title: "IAP Tunnelling"
+        default: true
+        description: "Initialise Identity Aware Proxy (IAP) before execution"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_additionalcli
+        type: String
+        title: "Additional Command line options"
+        description: "Add additional CLI options. Please use with care."
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_zone
+        type: String
+        title: "GCP Zone Deployment"
+        default: "us-central1-a"
+        description: "Select GCP Zone"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_project
+        type: String
+        title: "GCP Project ID"
+        default: "[ENTER PROJECT ID]"
+        description: "GCP Project"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_tmpdir
+        type: String
+        title: "Local Temp Directory"
+        default: "/tmp/rundeck/"
+        description: "Temp Directory for key creation etc"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
+      - name: gcp_gcloud
+        type: String
+        title: "Gcloud location"
+        default: "usr/bin/gcloud"
+        description: "Path containing gcloud executable. Please ensure a trailing /"
+        renderingOptions:
+          grouping: secondary
+          groupName: "Advanced Options"
