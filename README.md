@@ -1,20 +1,20 @@
 # gcloud-node-executor
 
-Rundeck plugin wrapper for Accessing Gcloud.
+### Rundeck plugin wrapper for Accessing Gcloud.
 
 
 
-Setup.
+*Setup.*
 
 Simply copy the zip file from the releases folder, and move to the /libext directory on your rundeck server.
 
-A server restart will make the plugin available.
+- A server restart will make the plugin available.
+- Plugin will exist at a server or project level under 
+- Project settings > Default Configuration > Default Node executor
 
 
 
-Plugin will exist at a server or project level under 
-
-Project settings > Default Configuration > Default Node executor
+*Configuration*
 
 You will need to set the following attributes for the plugin to function.
 
@@ -32,19 +32,16 @@ You will need to set the following attributes for the plugin to function.
 
 The plugin will utilise a service account token, and run the following steps:-
 
-Gcloud auth Activate-service account
-
-Generate SSH keys
-
-Add keys via OSLOGIN
-
-Run SSH Command with above parameters
-
-Remove keys
-
-Tidy up
+- Gcloud auth Activate-service account
+- Generate SSH keys
+- Add keys via OSLOGIN
+- Run SSH Command with above parameters
+- Remove keys
+- Tidy up
 
 
+
+Any feedback is welcome.
 
 
 
