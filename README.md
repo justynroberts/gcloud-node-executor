@@ -14,7 +14,7 @@ Simply copy the zip file from the releases folder, and move to the /libext direc
 
 
 
-*Configuration*
+### *Configuration*
 
 You will need to set the following attributes for the plugin to function.
 
@@ -29,8 +29,10 @@ You will need to set the following attributes for the plugin to function.
 | Cloud executable             | gcp_gcloud                | Path location for gcloud binary                   |
 
 
-Sample Node Source 
 
+### Sample Node Source 
+
+```
 gcp-instance-1:
  nodename: gcp-instance-1
  hostname: rundeck-node-1
@@ -47,7 +49,10 @@ gcp-instance-1:
  gcp_tmpdir: /tmp/rundeck/
  gcp_gcloud: /opt/homebrew/bin/
 
+### 
+```
 
+### Info
 
 The plugin will utilise a service account token, and run the following steps:-
 
