@@ -20,6 +20,7 @@ providers:
         renderingOptions:
           selectionAccessor: STORAGE_PATH
           valueConversion: STORAGE_PATH_AUTOMATIC_READ
+          instance-scope-node-attribute: "gcp_service_account_token"
       - name: gcp_iaptunnelling
         type: Boolean
         title: "IAP Tunnelling"
@@ -84,6 +85,7 @@ providers:
         type: String
         title: GCloud JSON Token
         description: "JSON Token for GCloud Service Account"
+        instance-scope-node-attribute: "gcp_service_account_token"
       - name: gcp_iaptunnelling
         type: Boolean
         title: "IAP Tunnelling"
