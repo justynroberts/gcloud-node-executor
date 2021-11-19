@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #----------------------------------------------------------------------------------------------------#
-GCLOUD="$RD_CONFIG_GCP_GCLOUD" 
+GCLOUD="$RD_CONFIG_GCP_GCLOUD_PATH" 
 export PATH=$GCLOUD:$PATH
 TMPDIR=$RD_CONFIG_GCP_TMPDIR
 SESSION="$RD_CONFIG_GCP_TMPDIR""$RD_JOB_ID"
@@ -48,15 +48,3 @@ gcloud compute os-login ssh-keys remove --key-file="$SESSION"'.key.pub' > /dev/n
 rm -f "$SESSION"'.key.pub'
 rm -f "$SESSION"'.key'
 rm -f "$SESSION"'.tok'
-
-
-
-
-
-
-
-
-
-
-
-
