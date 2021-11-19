@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #----------------------------------------------------------------------------------------------------#
-GCLOUD="$RD_CONFIG_GCP_GCLOUD" 
+GCLOUD="$RD_CONFIG_GCP_GCLOUD_PATH" 
 export PATH=$GCLOUD:$PATH
 TMPDIR=$RD_CONFIG_GCP_TMPDIR
 SESSION="$RD_CONFIG_GCP_TMPDIR""$RD_JOB_ID"
