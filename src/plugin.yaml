@@ -1,8 +1,8 @@
 name: Google Cloud Node Executor
 version: 1
-rundeckPluginVersion: 1.3
+rundeckPluginVersion: 1.2
 author: Jake Cohen / Justyn Roberts
-date: 2021-11-19
+date: 2021-10-12
 url: http://rundeck.org/
 providers:
   - name: GoogleCloudNodeExecutor
@@ -16,11 +16,11 @@ providers:
         type: String
         title: GCloud Service Account Token
         description: "JSON Token for GCloud Service Account"
-        default: true
+        default: "[Enter Token]"
         renderingOptions:
           selectionAccessor: STORAGE_PATH
           valueConversion: STORAGE_PATH_AUTOMATIC_READ
-          instance-scope-node-attribute: "gcp_service_account_token"
+          instance-scope-node-attribute: gcp_service_account_token
       - name: gcp_iaptunnelling
         type: Boolean
         title: "IAP Tunnelling"
@@ -29,7 +29,7 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_iaptunnelling"
+          instance-scope-node-attribute: gcp_iaptunnelling
       - name: gcp_additionalcli
         type: String
         title: "Additional Command line options"
@@ -37,7 +37,7 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_additionalcli"
+          instance-scope-node-attribute: gcp_additionalcli
       - name: gcp_zone
         type: String
         title: "GCP Zone Deployment"
@@ -46,16 +46,16 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_zone"
+          instance-scope-node-attribute: gcp_zone
       - name: gcp_project
         type: String
         title: "GCP Project ID"
-        default: "[ENTER PROJECT]"
+        default: "myproject"
         description: "GCP Project"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_project"
+          instance-scope-node-attribute: gcp_project
       - name: gcp_tmpdir
         type: String
         title: "Local Temp Directory"
@@ -64,28 +64,28 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_tmpdir"
+          instance-scope-node-attribute: gcp_tmpdir
       - name: gcp_gcloud
         type: String
         title: "gcloud location"
         default: "/bin/gcloud"
-        description: "Path of gcloud command. Please ensure a trailing /"
+        description: "Location of gcloud path. Please ensure a trailing /"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_gcloud"
+          instance-scope-node-attribute: gcp_gcloud
   - name: GoogleCloudFileCopier
     service: FileCopier
     plugin-type: script
     script-interpreter: /bin/bash
     script-file: gcloud_file_copier.sh
-    script-args: ${node.hostname} ${file-copy.file} ${file-copy.destination} ${config.json_token_file} ${config.service_account}
+    script-args: ${node.hostname} ${file-copy.file} ${file-copy.destination} ${config.json_token_file} ${config.service_account}${gcp_iaptunnelling} ${gcp_additionalcli} ${gcp_zone} ${gcp_project} ${gcp_tmpdir} ${gcp_gcloud}
     config:
-      - name: json_token_file
+      - name: gcp_service_account_token
         type: String
         title: GCloud JSON Token
         description: "JSON Token for GCloud Service Account"
-        instance-scope-node-attribute: "gcp_service_account_token"
+        instance-scope-node-attribute: gcp_service_account_token
       - name: gcp_iaptunnelling
         type: Boolean
         title: "IAP Tunnelling"
@@ -94,7 +94,7 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_iaptunnelling"
+          instance-scope-node-attribute: gcp_iaptunnelling
       - name: gcp_additionalcli
         type: String
         title: "Additional Command line options"
@@ -102,7 +102,7 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_additionalcli"
+          instance-scope-node-attribute: gcp_additional_cli
       - name: gcp_zone
         type: String
         title: "GCP Zone Deployment"
@@ -111,16 +111,16 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_zone"
+          instance-scope-node-attribute: gcp_zone
       - name: gcp_project
         type: String
         title: "GCP Project ID"
-        default: "[ENTER PROJECT ID]"
+        default: "myproject"
         description: "GCP Project"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_project"
+          instance-scope-node-attribute: gcp_project
       - name: gcp_tmpdir
         type: String
         title: "Local Temp Directory"
@@ -129,13 +129,13 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_tmpdir"
+          instance-scope-node-attribute: gcp_tmpdir
       - name: gcp_gcloud
         type: String
-        title: "Gcloud location"
-        default: "usr/bin/gcloud"
-        description: "Path containing gcloud executable. Please ensure a trailing /"
+        title: "gcloud location"
+        default: "/bin/gcloud"
+        description: "Location of gcloud path. Please ensure a trailing /"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: "gcp_gcloud"
+          instance-scope-node-attribute: gcp_tmpdir
