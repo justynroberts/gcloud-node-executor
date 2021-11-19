@@ -49,7 +49,7 @@ gcp-instance-1:
  gcp_tmpdir: /tmp/rundeck/
  gcp_gcloud: /opt/homebrew/bin/
 
-### 
+
 ```
 
 ### Info
