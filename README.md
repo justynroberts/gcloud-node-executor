@@ -25,7 +25,7 @@ You will need to set the following attributes for the plugin to function.
 | Zone                         | gcp_zone                  | The Zone of the project eg us-central-1           |
 | Project                      | gcp_project               | GCP Project name                                  |
 | Temp Directory               | gcp_tmpdir                | Directory for temp file processing                |
-| Cloud executable             | gcp_gcloud                | Path location for gcloud binary                   |
+| Cloud executable             | gcp_gcloud                | PATH location for gcloud binary   (NEEDS /)       |
 
 
 
@@ -35,7 +35,6 @@ You will need to set the following attributes for the plugin to function.
 gcp-instance-1:
  nodename: gcp-instance-1
  hostname: rundeck-node-1
- ip: 34.66.228.163
  osFamily: unix
  node-executor: GoogleCloudNodeExecutor
  file-copier: GoogleCloudFileCopier
@@ -46,8 +45,6 @@ gcp-instance-1:
  gcp_project: rundeck-331117
  gcp_tmpdir: /tmp/rundeck/
  gcp_gcloud: /opt/homebrew/bin/
-
-
 ```
 
 ### Info
