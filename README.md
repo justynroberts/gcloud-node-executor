@@ -29,6 +29,25 @@ You will need to set the following attributes for the plugin to function.
 | Cloud executable             | gcp_gcloud                | Path location for gcloud binary                   |
 
 
+Sample Node Source 
+
+gcp-instance-1:
+ nodename: gcp-instance-1
+ hostname: rundeck-node-1
+ ip: 34.66.228.163
+ description: Justyns GCP Instance
+ osFamily: unix
+ node-executor: GoogleCloudNodeExecutor
+ file-copier: GoogleCloudFileCopier
+ json_token_file: keys/project/Unity/key.json
+ gcp_zone: us-central1-a
+ gcp_iaptunnelling: true
+ gcp_additionalcli:
+ gcp_project: rundeck-331117
+ gcp_tmpdir: /tmp/rundeck/
+ gcp_gcloud: /opt/homebrew/bin/
+
+
 
 The plugin will utilise a service account token, and run the following steps:-
 
