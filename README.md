@@ -9,8 +9,7 @@
 Simply copy the zip file from the releases folder, and move to the /libext directory on your rundeck server.
 
 - A server restart will make the plugin available.
-- Plugin will exist at a server or project level under 
-- Project settings > Default Configuration > Default Node executor
+- Plugin will exist at a server or project level under Project settings > Default Configuration > Default Node executor
 
 
 
@@ -37,7 +36,6 @@ gcp-instance-1:
  nodename: gcp-instance-1
  hostname: rundeck-node-1
  ip: 34.66.228.163
- description: Justyns GCP Instance
  osFamily: unix
  node-executor: GoogleCloudNodeExecutor
  file-copier: GoogleCloudFileCopier
