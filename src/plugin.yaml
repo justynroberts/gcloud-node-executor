@@ -2,7 +2,7 @@ name: Google Cloud Node Executor
 version: 1
 rundeckPluginVersion: 1.2
 author: Jake Cohen / Justyn Roberts
-date: 2021-10-12
+date: 2021-11-19
 url: http://rundeck.org/
 providers:
   - name: GoogleCloudNodeExecutor
@@ -10,7 +10,7 @@ providers:
     plugin-type: script
     script-interpreter: /bin/bash
     script-file: gcloud_node_executor.sh
-    script-args: ${node.hostname} ${exec.command} ${config.gcp_service_account_token} ${config.service_account} ${gcp_iaptunnelling} ${gcp_additionalcli} ${gcp_zone} ${gcp_project} ${gcp_tmpdir} ${gcp_gcloud}
+    script-args: ${node.hostname} ${exec.command} ${config.gcp_service_account_token} ${config.service_account} ${gcp_iaptunnelling} ${gcp_additionalcli} ${gcp_zone} ${gcp_project} ${gcp_tmpdir} ${gcp_gcloud_path}
     config:
       - name: gcp_service_account_token
         type: String
@@ -65,7 +65,7 @@ providers:
           grouping: secondary
           groupName: "Advanced Options"
           instance-scope-node-attribute: gcp_tmpdir
-      - name: gcp_gcloud
+      - name: gcp_gcloud_path
         type: String
         title: "gcloud location"
         default: "/bin/gcloud"
@@ -73,13 +73,13 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: gcp_gcloud
+          instance-scope-node-attribute: gcp_gcloud_path
   - name: GoogleCloudFileCopier
     service: FileCopier
     plugin-type: script
     script-interpreter: /bin/bash
     script-file: gcloud_file_copier.sh
-    script-args: ${node.hostname} ${file-copy.file} ${file-copy.destination} ${config.json_token_file} ${config.service_account}${gcp_iaptunnelling} ${gcp_additionalcli} ${gcp_zone} ${gcp_project} ${gcp_tmpdir} ${gcp_gcloud}
+    script-args: ${node.hostname} ${file-copy.file} ${file-copy.destination} ${config.json_token_file} ${config.service_account}${gcp_iaptunnelling} ${gcp_additionalcli} ${gcp_zone} ${gcp_project} ${gcp_tmpdir} ${gcp_gcloud_path}
     config:
       - name: gcp_service_account_token
         type: String
@@ -130,7 +130,7 @@ providers:
           grouping: secondary
           groupName: "Advanced Options"
           instance-scope-node-attribute: gcp_tmpdir
-      - name: gcp_gcloud
+      - name: gcp_gcloud_path
         type: String
         title: "gcloud location"
         default: "/bin/gcloud"
@@ -138,4 +138,4 @@ providers:
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: gcp_tmpdir
+          instance-scope-node-attribute: gcp_gcloud_path
