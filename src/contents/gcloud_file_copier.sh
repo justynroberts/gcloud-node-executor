@@ -42,9 +42,21 @@ chmod 400 "$SESSION"'.key'
 chmod 400 "$SESSION"'.key.pub'
 
 gcloud compute os-login ssh-keys add --key-file="$SESSION"'.key.pub' --ttl=2h > /dev/null 2>&1
-gcloud compute scp sa_"$uniqueId"@"$RD_NODE_HOSTNAME" --ssh-key-file="$SESSION".key  --project="$RD_CONFIG_GCP_PROJECT" $CMDOPTS --zone="$RD_CONFIG_GCP_ZONE" "$RD_FILE_COPY_FILE" sa_"$uniqueId"@"$RD_NODE_HOSTNAME":"$RD_FILE_COPY_DESTINATION"
+gcloud compute scp sa_"$uniqueId"@"$RD_NODE_HOSTNAME" --ssh-key-file="$SESSION".key  --project="$RD_CONFIG_PROJECTID" $CMDOPTS --zone="$RD_CONFIG_ZONE" "$RD_FILE_COPY_FILE" sa_"$uniqueId"@"$RD_NODE_HOSTNAME":"$RD_FILE_COPY_DESTINATION"
 gcloud compute os-login ssh-keys remove --key-file="$SESSION"'.key.pub' > /dev/null 2>&1
 
 rm -f "$SESSION"'.key.pub'
 rm -f "$SESSION"'.key'
 rm -f "$SESSION"'.tok'
+
+
+
+
+
+
+
+
+
+
+
+

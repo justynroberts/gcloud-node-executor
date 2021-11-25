@@ -42,7 +42,7 @@ chmod 400 "$SESSION"'.key'
 chmod 400 "$SESSION"'.key.pub'
 
 gcloud compute os-login ssh-keys add --key-file="$SESSION"'.key.pub' --ttl=2h > /dev/null 2>&1
-gcloud compute ssh sa_"$uniqueId"@"$RD_NODE_HOSTNAME" --ssh-key-file="$SESSION".key  --project="$RD_CONFIG_GCP_PROJECT" $CMDOPTS --zone="$RD_CONFIG_GCP_ZONE" --ssh-flag="-T" --command="$RD_EXEC_COMMAND"
+gcloud compute ssh sa_"$uniqueId"@"$RD_NODE_HOSTNAME" --ssh-key-file="$SESSION".key  --project="$RD_CONFIG_PROJECTID" $CMDOPTS --zone="$RD_CONFIG_ZONE" --ssh-flag="-T" --command="$RD_EXEC_COMMAND"
 gcloud compute os-login ssh-keys remove --key-file="$SESSION"'.key.pub' > /dev/null 2>&1
 
 rm -f "$SESSION"'.key.pub'
