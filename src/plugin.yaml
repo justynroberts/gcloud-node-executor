@@ -16,7 +16,6 @@ providers:
         type: String
         title: GCloud Service Account Token
         description: "JSON Token for GCloud Service Account"
-        default: "[Enter Token]"
         renderingOptions:
           selectionAccessor: STORAGE_PATH
           valueConversion: STORAGE_PATH_AUTOMATIC_READ
@@ -24,7 +23,7 @@ providers:
       - name: gcp_iaptunnelling
         type: Boolean
         title: "IAP Tunnelling"
-        default: true
+        default: false
         description: "Initialise Identity Aware Proxy (IAP) before execution"
         renderingOptions:
           grouping: secondary
@@ -38,24 +37,22 @@ providers:
           grouping: secondary
           groupName: "Advanced Options"
           instance-scope-node-attribute: gcp_additionalcli
-      - name: gcp_zone
+      - name: zone
         type: String
         title: "GCP Zone Deployment"
-        default: "us-central1-a"
         description: "Select GCP Zone"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: gcp_zone
-      - name: gcp_project
+          instance-scope-node-attribute: zone
+      - name: projectId
         type: String
         title: "GCP Project ID"
-        default: "myproject"
         description: "GCP Project"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: gcp_project
+          instance-scope-node-attribute: projectId
       - name: gcp_tmpdir
         type: String
         title: "Local Temp Directory"
@@ -67,9 +64,9 @@ providers:
           instance-scope-node-attribute: gcp_tmpdir
       - name: gcp_gcloud_path
         type: String
-        title: "gcloud location"
+        title: "gcloud path"
         default: "/bin/gcloud"
-        description: "Location of gcloud path. Please ensure a trailing /"
+        description: "location containing gcloud executable. Please ensure a trailing /"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
@@ -89,7 +86,7 @@ providers:
       - name: gcp_iaptunnelling
         type: Boolean
         title: "IAP Tunnelling"
-        default: true
+        default: false
         description: "Initialise Identity Aware Proxy (IAP) before execution"
         renderingOptions:
           grouping: secondary
@@ -103,24 +100,22 @@ providers:
           grouping: secondary
           groupName: "Advanced Options"
           instance-scope-node-attribute: gcp_additional_cli
-      - name: gcp_zone
+      - name: zone
         type: String
         title: "GCP Zone Deployment"
-        default: "us-central1-a"
         description: "Select GCP Zone"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: gcp_zone
-      - name: gcp_project
+          instance-scope-node-attribute: zone
+      - name: projectId
         type: String
         title: "GCP Project ID"
-        default: "myproject"
         description: "GCP Project"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
-          instance-scope-node-attribute: gcp_project
+          instance-scope-node-attribute: projectId
       - name: gcp_tmpdir
         type: String
         title: "Local Temp Directory"
@@ -132,9 +127,9 @@ providers:
           instance-scope-node-attribute: gcp_tmpdir
       - name: gcp_gcloud_path
         type: String
-        title: "gcloud location"
+        title: "gcloud path"
         default: "/bin/gcloud"
-        description: "Location of gcloud path. Please ensure a trailing /"
+        description: "Location containing gcloud executable. Please ensure a trailing /"
         renderingOptions:
           grouping: secondary
           groupName: "Advanced Options"
