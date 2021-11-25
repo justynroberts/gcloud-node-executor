@@ -31,6 +31,9 @@ You will need to set the following attributes for the plugin to function.
 
 ### Sample Node Source 
 
+Node sources can be used to set individual attributes PER NODE (Managed endpoint). A full list of relevant parameters are below.
+
+
 ```
 gcp-instance-1:
  nodename: gcp-instance-1
