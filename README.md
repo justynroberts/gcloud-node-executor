@@ -23,7 +23,7 @@ You will need to set the following attributes for the plugin to function.
 | IAP Tunnelling               | gcp_iaptunnelling         | Utilise IAP tunnelling                            |
 | Additional command line      | gcp_additionalcli         | Any additional CLI options (use with care)        |
 | Zone                         | (*) zone                  | The Zone of the project eg us-central-1           |
-| Project                      | (*) projectId             | GCP Project name(*)                               |
+| Project                      | (*) projectId             | GCP Project name.                                 |
 | Temp Directory               | gcp_tmpdir                | Directory for temp file processing                |
 | Cloud executable             | gcp_gcloud_path           | PATH location for gcloud binary   (NEEDS /)       |
 
