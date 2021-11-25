@@ -22,17 +22,17 @@ You will need to set the following attributes for the plugin to function.
 | GCloud Service Account Token | gcp_service_account_token | Json format token. Should be location in keystore |
 | IAP Tunnelling               | gcp_iaptunnelling         | Utilise IAP tunnelling                            |
 | Additional command line      | gcp_additionalcli         | Any additional CLI options (with care             |
-| Zone                         | gcp_zone                  | The Zone of the project eg us-central-1           |
-| Project                      | gcp_project               | GCP Project name                                  |
+| Zone                         | zone                      | The Zone of the project eg us-central-1   (*)     |
+| Project                      | projectId                 | GCP Project name(*)                               |
 | Temp Directory               | gcp_tmpdir                | Directory for temp file processing                |
 | Cloud executable             | gcp_gcloud_path           | PATH location for gcloud binary   (NEEDS /)       |
 
 
+* Both projectId and zone are compatible with the GCP node source plugins
 
 ### Sample Node Source 
 
-Node sources can be used to set individual attributes PER NODE (Managed endpoint). A full list of relevant parameters are below.
-
+Node sources can be used to override individual attributes PER NODE (Managed endpoint). A full list of relevant parameters are below.
 
 ```
 gcp-instance-1:
@@ -49,6 +49,8 @@ gcp-instance-1:
  gcp_tmpdir: /tmp/rundeck/
  gcp_gcloud: /opt/homebrew/bin/
 ```
+
+
 
 ### Info
 
