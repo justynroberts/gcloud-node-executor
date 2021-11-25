@@ -42,10 +42,10 @@ gcp-instance-1:
  node-executor: GoogleCloudNodeExecutor
  file-copier: GoogleCloudFileCopier
  json_token_file: keys/project/key.json
- gcp_zone: us-central1-a
+ zone: us-central1-a
+ projectId: rundeck-331117
  gcp_iaptunnelling: true
  gcp_additionalcli: --verbosity=debug
- gcp_project: rundeck-331117
  gcp_tmpdir: /tmp/rundeck/
  gcp_gcloud: /opt/homebrew/bin/
 ```
