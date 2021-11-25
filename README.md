@@ -25,7 +25,7 @@ You will need to set the following attributes for the plugin to function.
 | Zone                         | (*) zone                  | The Zone of the project eg us-central-1           |
 | Project                      | (*) projectId             | GCP Project name.                                 |
 | Temp Directory               | gcp_tmpdir                | Directory for temp file processing                |
-| Cloud executable             | gcp_gcloud_path           | PATH location for gcloud binary   (NEEDS /)       |
+| Cloud executable path        | gcp_gcloud_path           | PATH location for gcloud binary   (NEEDS /)       |
 
 
 * Both projectId and zone are compatible with the GCP node source plugins
