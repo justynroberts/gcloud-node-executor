@@ -39,11 +39,11 @@ gcp-instance-1:
  nodename: gcp-instance-1
  hostname: rundeck-node-1
  osFamily: unix
- node-executor: GoogleCloudNodeExecutor
- file-copier: GoogleCloudFileCopier
- json_token_file: keys/project/key.json
  zone: us-central1-a
  projectId: rundeck-331117
+ node-executor: GoogleCloudNodeExecutor
+ file-copier: GoogleCloudFileCopier
+ gcp_service_account_token: keys/project/key.json
  gcp_iaptunnelling: true
  gcp_additionalcli: --verbosity=debug
  gcp_tmpdir: /tmp/rundeck/
