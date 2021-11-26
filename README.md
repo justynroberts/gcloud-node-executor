@@ -6,7 +6,7 @@
 
 *Setup.*
 
-Simply copy the zip file from the releases folder, and move to the /libext directory on your rundeck server.
+Simply copy the zip file, and move to the /libext directory on your rundeck server.
 
 - A server restart will make the plugin available.
 - Plugin will exist at a server or project level under Project settings > Default Configuration > Default Node executor
