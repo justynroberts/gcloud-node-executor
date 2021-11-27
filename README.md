@@ -54,7 +54,7 @@ gcp-instance-1:
 
 ### Info
 
-The plugin will utilise a service account token, and run the following steps:-
+The plugin will utilise a per project service account token, and run the following steps:-
 
 - Gcloud auth Activate-service account
 - Generate SSH keys
