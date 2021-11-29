@@ -50,6 +50,9 @@ gcp-instance-1:
  gcp_gcloud: /opt/homebrew/bin/
 ```
 
+Tip.
+Consider nesting node enhancers to add top level attributes (eg node-executor,file-copier,gcloud path)
+Then adding additional project specific attributes in an additional enhancer. eg  gcp_iaptunnelling or gcp_service_account_token)
 
 
 ### Info
