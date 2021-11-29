@@ -70,5 +70,6 @@ The plugin will utilise a per project service account token, and run the followi
 
 Any feedback is welcome.
 
+Any problems with zip files you may have to build manually by extracting the src folder and rezipping to your platform.
 
 
