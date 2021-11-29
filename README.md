@@ -1,4 +1,4 @@
-# gcloud-node-executor
+# Google Cloud Node Executor for Rundeck
 
 ### Rundeck plugin wrapper for Accessing Google Cloud Platform via SSH
 
