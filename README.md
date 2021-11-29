@@ -8,7 +8,7 @@
 
 ## Getting the source
 
-`git clone https://github.com/MegaDrive68k/rundeck-terraform-steps-plugin`
+`git clone https://github.com/justynroberts/gcloud-node-executor`
 
 ## Building the plugin
 
