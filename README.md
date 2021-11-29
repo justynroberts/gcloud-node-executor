@@ -6,7 +6,17 @@
 
 *Setup.*
 
-Simply copy the zip file, and move to the /libext directory on your rundeck server.
+## Getting the source
+
+`git clone https://github.com/MegaDrive68k/rundeck-terraform-steps-plugin`
+
+## Building the plugin
+
+  1. `make clean`
+  2. `make build`
+  3. The plugin will be available to the build/zip directory.
+
+Copy this to the libext directory or use the UI to import
 
 - A server restart will make the plugin available.
 - Plugin will exist at a server or project level under Project settings > Default Configuration > Default Node executor
