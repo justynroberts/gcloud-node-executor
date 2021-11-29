@@ -1,7 +1,7 @@
 name: Google Cloud Node Executor
 version: 1
 rundeckPluginVersion: 1.2
-author: Jake Cohen / Justyn Roberts
+author: Jake Cohen / Justyn Roberts / Giran Moodley
 date: 2021-11-19
 url: http://rundeck.org/
 providers:
