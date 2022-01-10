@@ -32,7 +32,6 @@ You will need to set the following attributes for the plugin to function.
 | GCloud Service Account Token | gcp_service_account_token | Json format token. Should be location in keystore |
 | IAP Tunnelling               | gcp_iaptunnelling         | Utilise IAP tunnelling                            |
 | Additional command line      | gcp_additionalcli         | Any additional CLI options (use with care)        |
-| Zone                         | (*) zone                  | The Zone of the project eg us-central-1           |
 | Project                      | (*) projectId             | GCP Project name.                                 |
 | Temp Directory               | gcp_tmpdir                | Directory for temp file processing                |
 | Cloud executable path        | gcp_gcloud_path           | PATH location for gcloud binary   (NEEDS /)       |
