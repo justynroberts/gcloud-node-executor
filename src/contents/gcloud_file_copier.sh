@@ -44,7 +44,7 @@ gcloud auth activate-service-account --key-file "$SESSION"'.tok' --configuration
 # Export service account variables
 export service_account=$(gcloud config list account --format "value(core.account)" --configuration="config-$RANDOM_ID")
 gcloud config set account $service_account --configuration="config-$RANDOM_ID" > /dev/null 2>&1
-gcloud config set compute/zone $RD_CONFIG_ZONE --configuration="config-$RANDOM_ID" > /dev/null 2>&1
+#gcloud config set compute/zone $RD_CONFIG_ZONE --configuration="config-$RANDOM_ID" > /dev/null 2>&1
 export uniqueId=$(gcloud iam service-accounts describe "$service_account" --format='value(uniqueId)' --configuration="config-$RANDOM_ID")
 
 # Generate temporary SSH key
