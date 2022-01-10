@@ -37,7 +37,7 @@ You will need to set the following attributes for the plugin to function.
 | Cloud executable path        | gcp_gcloud_path           | PATH location for gcloud binary   (NEEDS /)       |
 
 
-* Both projectId and zone are compatible with the GCP node source plugins
+* projectId is compatible with the GCP node source plugins
 
 ### Sample Node Source 
 
