@@ -37,14 +37,6 @@ providers:
           grouping: secondary
           groupName: "Advanced Options"
           instance-scope-node-attribute: gcp_additionalcli
-      - name: zone
-        type: String
-        title: "GCP Zone Deployment"
-        description: "Select GCP Zone"
-        renderingOptions:
-          grouping: secondary
-          groupName: "Advanced Options"
-          instance-scope-node-attribute: zone
       - name: projectId
         type: String
         title: "GCP Project ID"
@@ -100,14 +92,6 @@ providers:
           grouping: secondary
           groupName: "Advanced Options"
           instance-scope-node-attribute: gcp_additional_cli
-      - name: zone
-        type: String
-        title: "GCP Zone Deployment"
-        description: "Select GCP Zone"
-        renderingOptions:
-          grouping: secondary
-          groupName: "Advanced Options"
-          instance-scope-node-attribute: zone
       - name: projectId
         type: String
         title: "GCP Project ID"
