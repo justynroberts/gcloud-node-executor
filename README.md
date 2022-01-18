@@ -16,7 +16,7 @@
   2. `make build`
   3. The plugin will be available to the build/zip directory.
 
-Copy this to the libext directory or use the UI to import
+Copy this to the libext directory eg (/var/lib/rundeck/libext) or use the UI to import
 
 - A server restart will make the plugin available.
 - Plugin will exist at a server or project level under Project settings > Default Configuration > Default Node executor
